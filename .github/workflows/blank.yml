@@ -30,4 +30,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
-          echo ${{ github.event.pull_request }}
+          echo ${{ github.event.pull_request.state }}
+          echo ${{ github.event.pull_request.locked }}
+          echo ${{ github.event.pull_request.milestone.open_issues }}
+          
