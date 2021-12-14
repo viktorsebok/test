@@ -5,7 +5,18 @@ name: CI
 # Controls  when the workflow will run
 on:
   pull_request:
-    branches: [ main ]
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
