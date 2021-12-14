@@ -33,4 +33,11 @@ jobs:
           echo ${{ github.event.pull_request.state }}
           echo ${{ github.event.pull_request.locked }}
           echo ${{ github.event.pull_request.milestone.open_issues }}
+          echo "Branch:  ${{github.event.pull_request.head.ref}}"
           
+          
+      - name: Get branch name 
+        id: branch-name 
+        uses: tj-actions/branch-names@v5
+      - run: |
+            echo "Branch: ${{ steps.branch-name.outputs.current_branch }} "
